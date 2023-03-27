@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+            @import"reset.css";
+
+        section {
+            width: 700px;
+            height: 700px;
+            background: green;
+        }
+       
+
+        /* 축구공 */
+        section #imgbox{
+            border-radius: 50%;
+            padding-top: 200px;
+            padding-left: 250px;
+            border-radius: 50%;
+            width: 100px;
+            border: 1px red solid;
+            
+        }
+        section #ball{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+         
+        }
+         /* 버튼바 */
+
+        section #buttonbar{
+            display: flex;
+            width: 420px;
+            font-size:2em;
+            margin: 30px 0 0 150px ;
+        }
+        section #buttonbar li{
+            margin: 0 0 0 120px;
+            border: solid 1px black;
+        }
+
+        /* 메뉴바 */
+        section #menubar{
+            display: flex;
+            flex: left;
+            height: 25px;
+            margin-top: 45px;
+
+        }
+        section #menubar li{
+            font-size: 1.5em;
+            font-weight: 700;
+
+        }
+        section #menubar li:nth-child(1){
+            margin-left: 25px;
+        }
+        section #menubar li:nth-child(2){
+            margin-left: 500px;
+        }
+
+
+
+
+        #half_top{
+            height: 150px;
+        }
+        #half_top ul{
+            display: flex;
+            flex: left;
+        }
+        #half_top ul li{
+            margin-left: 155px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+        <section>
+            <!-- 골대 -->
+            <div id="half_top">
+                <ul>
+                    <li>10</li>
+                    <li>20</li>
+                    <li>30</li>
+                </ul>
+            </div>
+
+
+
+
+
+            <!-- 공 -->
+            <div id="half_bottom">
+                <div id="imgbox"><img id="ball" src="https://shopping-phinf.pstatic.net/main_3725297/37252974375.20230303234448.jpg?type=f640" alt="축구공"></div>
+                
+                <ul id="buttonbar">
+                    <li li="lshoot">←</li>
+                    <li li="rshoot">→</li>
+                </ul>
+                
+                <ul id="menubar">
+                    <li>SCORE 0</li>
+                    <li>0/15</li>
+                </ul>
+            </div>
+        </section>
+
+
+    <script>
+        const $where = document.getElementById('buttonbar');
+        const $leftshoot = $where.firstElementChild;
+        const $rightshoot = $where.lastElementChild;
+        const $ball = document.getElementById('ball');
+
+
+        $leftshoot.onclick = e => {
+            e=console.log('좌클릭');
+            console.log(e);
+            $ball.animate({left:'200px'});
+        };
+        $rightshoot.onclick = e => {
+            e=console.log('우클릭');
+            console.log(e);
+            $ball.animate({left:'200px'});
+        };
+
+
+    
+    </script>
+</body>
+</html>
